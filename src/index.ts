@@ -1,21 +1,21 @@
 import express from 'express';
 import cors from 'cors';
 import appDataSource from './data-source';
+import plantRouter from './routes/PlantRoutes';
 
-appDataSource.initialize().then(() => {
+appDataSource.initialize()
+    .then(() => { // initialisation de l'orm
 
     //paramètres
-    const app = express();
+    const app = express(); // pour utiliser les élément de express
 
-    app.use(express.json());
+    app.use(express.json()); // paramètre la possibilité de récupérer des infos dans un body en format json (autorisation de renvoyer des objets json)
     app.use(cors({
-        origin:"*",
+        origin:"*", // équivalent de 'http://localhost:3000' 
         methods: ["GET", "POST", "PUT", "DELETE"],
     }));
-    app.use(express.json);
-    app.get("/", (req, res) => {
-        res.send("Hello Worldd")
-    });
+    app.use("/api/plants", plantRouter); // Route initiale de bookRouter (ce qui s'inscrit après localhost):
+
     app.listen(process.env.PORT, () => {
         console.log(`API is running on PORT :${process.env.PORT}`);
     });    
