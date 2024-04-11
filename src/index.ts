@@ -14,7 +14,7 @@ appDataSource.initialize()
         origin:"*", // équivalent de 'http://localhost:3000' 
         methods: ["GET", "POST", "PUT", "DELETE"],
     }));
-    app.use("/api/plants", plantRouter); // Route initiale de bookRouter (ce qui s'inscrit après localhost):
+    app.use("/api/plants", plantRouter); // Route initiale de plantRouter (ce qui s'inscrit après localhost):
 
     app.listen(process.env.PORT, () => {
         console.log(`API is running on PORT :${process.env.PORT}`);
