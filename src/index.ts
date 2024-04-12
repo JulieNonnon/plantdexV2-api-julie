@@ -14,6 +14,8 @@ appDataSource.initialize()
         origin:"*", // équivalent de 'http://localhost:3000' 
         methods: ["GET", "POST", "PUT", "DELETE"],
     }));
+
+    // Routes
     app.use("/api/plants", plantRouter); // Route initiale de plantRouter (ce qui s'inscrit après localhost):
 
     app.listen(process.env.PORT, () => {

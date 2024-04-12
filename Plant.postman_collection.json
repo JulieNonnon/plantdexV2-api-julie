@@ -54,8 +54,17 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n      \"nom\": \"Spathiphyllum 'Sweet Lauretta' cache-pot blanc D21cm\",\r\n      \"soleil\": \"moyen\",\r\n      \"arrosage\": 2,\r\n      \"categorie\": \"plantes fleuries\",\r\n      \"image\": \"https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0832000/832922_001.jpg\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:7777/api/plants",
+					"raw": "http://localhost:7777/api/plants/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -63,7 +72,8 @@
 					"port": "7777",
 					"path": [
 						"api",
-						"plants"
+						"plants",
+						""
 					]
 				},
 				"description": "create"
